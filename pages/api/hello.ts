@@ -1,13 +1,18 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+import { CompanyService } from '../../lib/company.service';
+import { Company } from '../../lib/dynamodb/entities/company.entity';
+
 type Data = {
-  name: string
+  companies: Company[];
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  const companies = await CompanyService.listAll();
+
+  res.status(200).json({ companies })
 }

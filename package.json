@@ -9,9 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.165.0",
+    "@aws-sdk/lib-dynamodb": "^3.165.0",
+    "@typedorm/common": "1.15.0",
+    "@typedorm/core": "1.15.0",
+    "@typedorm/document-client": "1.15.0",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/node": "18.7.15",
